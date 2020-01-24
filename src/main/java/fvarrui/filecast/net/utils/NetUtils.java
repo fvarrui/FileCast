@@ -1,4 +1,4 @@
-package fvarrui.filecast;
+package fvarrui.filecast.net.utils;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;
@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class NetUtils {
-
+	
 	public static List<InetAddress> listAllBroadcastAddresses() throws SocketException {
 		List<InetAddress> broadcastList = new ArrayList<>();
 		Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
