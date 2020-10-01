@@ -7,7 +7,7 @@ import java.util.List;
 
 import fvarrui.filecast.net.packets.HelloPacket;
 import fvarrui.filecast.net.packets.Packet;
-import fvarrui.filecast.net.packets.ThreadUtils;
+import fvarrui.filecast.net.utils.ThreadUtils;
 import fvarrui.filecast.net.utils.UDPUtils;
 
 public class FileCast {
@@ -37,6 +37,7 @@ public class FileCast {
 					Host sender = new Host();
 					sender.setAddress(InetAddress.getByName(packet.getAddress()));
 					senders.add(sender);
+					
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -45,11 +46,11 @@ public class FileCast {
 
 		// envía un mensaje broadcast a todos los senders
 		helloSender();
-		
+
 		// tras un tiempo de espera, devuelve los senders que han contestado
 		ThreadUtils.sleep(5000L);
 		t.stop();
-		
+
 		return senders;
 	}
 

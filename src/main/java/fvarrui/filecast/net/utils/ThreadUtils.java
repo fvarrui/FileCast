@@ -1,4 +1,4 @@
-package fvarrui.filecast.net.packets;
+package fvarrui.filecast.net.utils;
 
 public class ThreadUtils {
 	
